@@ -44,16 +44,6 @@ export const Education = () => {
               transition={{ delay: index * 0.1, duration: 0.8 }}
               className="glass p-12 rounded-[2.5rem] border-white/[0.03] group hover:border-primary/40 transition-all duration-700 relative overflow-hidden"
             >
-              {edu.bgImage && (
-                <div className="absolute inset-y-0 right-0 w-1/2 z-0 pointer-events-none overflow-hidden">
-                  <img
-                    src={edu.bgImage}
-                    className="w-full h-full object-cover object-right opacity-[0.05] group-hover:opacity-[0.15] transition-all duration-1000 grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 origin-right"
-                    alt={edu.degree}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/80 to-black" />
-                </div>
-              )}
               <div className="absolute top-0 right-0 p-12 opacity-[0.02] pointer-events-none group-hover:opacity-[0.05] transition-opacity">
                 < GraduationCap size={180} />
               </div>
