@@ -1,20 +1,31 @@
 import { motion } from 'framer-motion'
 import { GraduationCap, BookOpen, MapPin } from 'lucide-react'
 
-const education = [
+interface EducationItem {
+  degree: string;
+  institution: string;
+  location: string;
+  period: string;
+  details: string;
+  bgImage?: string;
+}
+
+const education: EducationItem[] = [
   {
     degree: "Bachelor of Engineering in Electrical & Electronics",
     institution: "AGMR College of Engineering",
     location: "Varur, Hubli",
     period: "Nov 2021 – July 2024",
-    details: "Focused on advanced electrical systems and electronic circuit design with a strong foundation in engineering principles."
+    details: "Focused on advanced electrical systems and electronic circuit design with a strong foundation in engineering principles.",
+    bgImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2000"
   },
   {
     degree: "Diploma in Electrical & Electronics",
     institution: "Tippu Shaheed Institute of Technology",
     location: "Hubli",
     period: "2018 – 2021",
-    details: "Developed core technical skills in electrical engineering and electronics through hands-on training and theoretical study."
+    details: "Developed core technical skills in electrical engineering and electronics through hands-on training and theoretical study.",
+    bgImage: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&q=80&w=2000"
   }
 ]
 
@@ -43,6 +54,11 @@ export const Education = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
               className="glass p-12 rounded-[2.5rem] border-white/[0.03] group hover:border-primary/40 transition-all duration-700 relative overflow-hidden"
+              style={{
+                backgroundImage: edu.bgImage ? `linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url(${edu.bgImage})` : undefined,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
             >
               <div className="absolute top-0 right-0 p-12 opacity-[0.02] pointer-events-none group-hover:opacity-[0.05] transition-opacity">
                 < GraduationCap size={180} />
