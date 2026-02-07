@@ -77,60 +77,29 @@
   background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.8) 100%);
 }
 
+video {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  will-change: transform;
+}
+
 .film-grain {
   position: absolute;
-  inset: -100%;
+  inset: 0;
   z-index: 10;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.03;
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  animation: grain 1s steps(10) infinite;
+  animation: grain 0.8s steps(6) infinite;
 }
 
 @keyframes grain {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  10% {
-    transform: translate(-5%, -5%);
-  }
-
-  20% {
-    transform: translate(-10%, 5%);
-  }
-
-  30% {
-    transform: translate(5%, -10%);
-  }
-
-  40% {
-    transform: translate(-5%, 15%);
-  }
-
-  50% {
-    transform: translate(-10%, 5%);
-  }
-
-  60% {
-    transform: translate(15%, 0);
-  }
-
-  70% {
-    transform: translate(0, 10%);
-  }
-
-  80% {
-    transform: translate(-15%, 0);
-  }
-
-  90% {
-    transform: translate(10%, 5%);
-  }
-
-  100% {
-    transform: translate(5%, 0);
-  }
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-2%, -1%); }
+  40% { transform: translate(-1%, 2%); }
+  60% { transform: translate(1%, -2%); }
+  80% { transform: translate(2%, 1%); }
 }
 
 @keyframes marquee {

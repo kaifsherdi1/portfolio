@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import heroVideo from '../assets/videos/v1.mp4'
 
 export const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -53,14 +52,15 @@ export const Hero = () => {
       {/* Full-screen Video Background */}
       <div className="video-container absolute inset-0 w-full h-full overflow-hidden">
         <video
+          key="/videos/v1.mp4"
           ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover object-[center_15%] brightness-[0.7] contrast-[1.2] grayscale-[0.2]"
+          className="absolute inset-0 w-full h-full object-cover object-[center_15%] brightness-[0.7] contrast-[1.2] grayscale-[0.2] [transform:translateZ(0)]"
         >
-          <source src={heroVideo} type="video/mp4" />
+          <source src="/videos/v1.mp4" type="video/mp4" />
         </video>
         {/* Cinematic Masks */}
         <div className="film-grain" />

@@ -107,13 +107,14 @@ function App() {
 
             <div className="w-full sm:w-[350px] md:w-[450px] aspect-[3/4] sm:aspect-[2/3] glass overflow-hidden border-white/[0.03] shrink-0 sm:sticky sm:top-20 group">
               <video
+                key="/videos/v2.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 [transform:translateZ(0)]"
               >
-                <source src="/src/assets/videos/v2.mp4" type="video/mp4" />
+                <source src="/videos/v2.mp4" type="video/mp4" />
               </video>
             </div>
           </motion.div>

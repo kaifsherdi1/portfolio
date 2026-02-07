@@ -1,7 +1,18 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 
 
-const expertise = [
+interface Skill {
+  name: string
+  logo: string
+}
+
+interface ExpertiseGroup {
+  title: string
+  icon: string
+  skills: Skill[]
+}
+
+const expertise: ExpertiseGroup[] = [
   {
     title: "Frontend Engineering",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
@@ -40,7 +51,7 @@ const expertise = [
   }
 ]
 
-const SkillCard = ({ group, index }: { group: any, index: number }) => {
+const SkillCard = ({ group, index }: { group: ExpertiseGroup, index: number }) => {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
 
@@ -102,7 +113,7 @@ const SkillCard = ({ group, index }: { group: any, index: number }) => {
         </h3>
 
         <div className="flex flex-wrap gap-3 mt-auto">
-          {group.skills.map((skill: any, si: number) => (
+          {group.skills.map((skill: Skill, si: number) => (
             <motion.div
               key={si}
               whileHover={{ scale: 1.05, translateZ: 20 }}
