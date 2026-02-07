@@ -8,7 +8,17 @@ import redFreshImg from '../assets/projects/Redfreshbharath-image.png'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const projects = [
+interface Project {
+  title: string;
+  category: string;
+  tech: string[];
+  description: string;
+  stats: { [key: string]: string };
+  image: string;
+  url: string;
+}
+
+const projects: Project[] = [
   {
     title: "Real Estate Management",
     category: "Full Stack / Production",
@@ -108,10 +118,32 @@ export const Projects = () => {
     return () => ctx.revert()
   }, [])
 
+  // Restore the hover/tilt effect
+  const handleCardHover = (index: number, isEntering: boolean) => {
+    const card = cardRefs.current[index]
+    if (!card) return
+
+    if (isEntering) {
+      gsap.to(card, {
+        y: -12,
+        scale: 1.02,
+        duration: 0.5,
+        ease: 'power2.out'
+      })
+    } else {
+      gsap.to(card, {
+        y: 0,
+        scale: 1,
+        duration: 0.5,
+        ease: 'power2.out'
+      })
+    }
+  }
+
   return (
     <section ref={sectionRef} className="min-h-screen relative bg-black py-20 md:py-0 overflow-hidden md:flex md:items-center">
-      {/* Ambient background glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none" />
+      {/* Ambient background glow - Restored Intensity */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none" />
 
       {/* Heading */}
       <div className="absolute top-6 sm:top-8 md:top-12 left-4 sm:left-8 md:left-20 z-20 pointer-events-none">
@@ -123,8 +155,10 @@ export const Projects = () => {
       <div ref={scrollRef} className="flex flex-col md:flex-row gap-12 md:gap-16 px-4 md:px-[10vw] md:pr-[30vw] md:items-center w-full md:w-auto h-auto md:h-full md:pt-32 pb-20 md:pb-0">
         {projects.map((project, index) => (
           <div
-            key={index}
+            key={project.title}
             ref={(el) => { cardRefs.current[index] = el }}
+            onMouseEnter={() => handleCardHover(index, true)}
+            onMouseLeave={() => handleCardHover(index, false)}
             className="w-full md:w-[500px] shrink-0 relative group"
             style={{ perspective: '1000px' }}
           >
