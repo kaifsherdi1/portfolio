@@ -74,7 +74,6 @@
 
 .lighting-glow {
   position: absolute;
-  position: absolute;
   width: 60vw;
   height: 60vw;
   max-width: 800px;
@@ -155,6 +154,6 @@ video {
   }
 
   100% {
-    transform: translateX(calc(100vw + 100px));
+    transform: translateX(100vw);
   }
 }

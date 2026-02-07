@@ -27,7 +27,7 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 md:px-12 py-4 sm:py-6 md:py-10">
-      <div className="flex justify-between items-center relative z-50">
+      <div className="flex justify-between items-center relative z-[1001]">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -53,7 +53,8 @@ export const Navbar = () => {
         {/* Mobile Menu Toggle */}
         <button
           onClick={toggleMenu}
-          className="md:hidden pointer-events-auto text-white/50 hover:text-white transition-colors text-xs font-bold tracking-[0.2em] uppercase z-50"
+          className="md:hidden pointer-events-auto text-white/50 hover:text-white transition-colors text-xs font-bold tracking-[0.2em] uppercase z-[1001] relative"
+          aria-label="Toggle Menu"
         >
           {isOpen ? 'Close' : 'Menu'}
         </button>
@@ -67,7 +68,8 @@ export const Navbar = () => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 bg-black/95 backdrop-blur-xl z-[100] flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 bg-black/98 backdrop-blur-xl z-[999] flex flex-col items-center justify-center gap-8 md:hidden h-screen w-screen touch-none"
+            onClick={() => setIsOpen(false)}
           >
             {['Home', 'About', 'Projects', 'Experience', 'Contact'].map((item, i) => (
               <motion.a
@@ -76,8 +78,11 @@ export const Navbar = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i + 0.3 }}
-                onClick={() => setIsOpen(false)}
-                className="text-2xl font-display font-bold tracking-widest text-white/70 hover:text-primary transition-colors uppercase"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsOpen(false);
+                }}
+                className="text-2xl font-display font-bold tracking-widest text-white/70 hover:text-primary transition-colors uppercase cursor-pointer p-4"
               >
                 {item}
               </motion.a>
