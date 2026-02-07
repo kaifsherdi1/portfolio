@@ -27,21 +27,20 @@ function App() {
 
     gsap.ticker.lagSmoothing(0)
 
-    // Magnetic Button Effect
+    // Optimized Magnetic Button Effect
     const btn = magneticRef.current
     if (btn) {
+      const xSetter = gsap.quickSetter(btn, "x", "px")
+      const ySetter = gsap.quickSetter(btn, "y", "px")
+
       const handleMove = (e: MouseEvent) => {
         const { clientX, clientY } = e
         const { left, top, width, height } = btn.getBoundingClientRect()
-        const x = clientX - (left + width / 2)
-        const y = clientY - (top + height / 2)
+        const x = (clientX - (left + width / 2)) * 0.4
+        const y = (clientY - (top + height / 2)) * 0.4
 
-        gsap.to(btn, {
-          x: x * 0.4,
-          y: y * 0.4,
-          duration: 1,
-          ease: 'power3.out'
-        })
+        xSetter(x)
+        ySetter(y)
       }
 
       const handleLeave = () => {
@@ -108,6 +107,7 @@ function App() {
             <div className="w-full sm:w-[350px] md:w-[450px] aspect-[3/4] sm:aspect-[2/3] glass overflow-hidden border-white/[0.03] shrink-0 sm:sticky sm:top-20 group">
               <video
                 key="/videos/v2.mp4"
+                src="/videos/v2.mp4"
                 autoPlay
                 loop
                 muted

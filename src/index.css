@@ -82,6 +82,12 @@ video {
   backface-visibility: hidden;
   perspective: 1000;
   will-change: transform;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.hero-video-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  contain: strict;
 }
 
 .film-grain {
@@ -89,17 +95,35 @@ video {
   inset: 0;
   z-index: 10;
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.02;
   background-image: url("https://grainy-gradients.vercel.app/noise.svg");
   animation: grain 0.8s steps(6) infinite;
+  will-change: transform;
+  contain: strict;
 }
 
 @keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  20% { transform: translate(-2%, -1%); }
-  40% { transform: translate(-1%, 2%); }
-  60% { transform: translate(1%, -2%); }
-  80% { transform: translate(2%, 1%); }
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  20% {
+    transform: translate(-2%, -1%);
+  }
+
+  40% {
+    transform: translate(-1%, 2%);
+  }
+
+  60% {
+    transform: translate(1%, -2%);
+  }
+
+  80% {
+    transform: translate(2%, 1%);
+  }
 }
 
 @keyframes marquee {

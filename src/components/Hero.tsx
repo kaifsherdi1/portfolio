@@ -30,13 +30,13 @@ export const Hero = () => {
 
       // Parallax Video
       gsap.to(videoRef.current, {
-        yPercent: 20,
+        yPercent: 15,
         ease: 'none',
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
           end: 'bottom top',
-          scrub: true
+          scrub: 1.5
         }
       })
     })
@@ -54,14 +54,17 @@ export const Hero = () => {
         <video
           key="/videos/v1.mp4"
           ref={videoRef}
+          src="/videos/v1.mp4"
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover object-[center_15%] brightness-[0.7] contrast-[1.2] grayscale-[0.2] [transform:translateZ(0)]"
+          className="absolute inset-0 w-full h-full object-cover object-[center_15%] [transform:translateZ(0)]"
         >
           <source src="/videos/v1.mp4" type="video/mp4" />
         </video>
+        {/* Cinematic Filters Overlay - Offloaded from video for performance */}
+        <div className="absolute inset-0 bg-black/40 pointer-events-none z-10 hero-video-overlay" />
         {/* Cinematic Masks */}
         <div className="film-grain" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 z-10" />
