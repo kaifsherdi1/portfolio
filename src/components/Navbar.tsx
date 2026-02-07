@@ -37,7 +37,7 @@ export const Navbar = () => {
         </motion.div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-4 sm:gap-8 md:gap-12 font-bold text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-white/30 pointer-events-auto">
+        <div className="hidden md:flex gap-4 sm:gap-8 md:gap-12 font-bold text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] text-white/70 pointer-events-auto">
           {['Home', 'About', 'Projects', 'Experience', 'Contact'].map((item) => (
             <motion.a
               key={item}
@@ -53,7 +53,7 @@ export const Navbar = () => {
         {/* Mobile Menu Toggle */}
         <button
           onClick={toggleMenu}
-          className="md:hidden pointer-events-auto text-white/50 hover:text-white transition-colors text-xs font-bold tracking-[0.2em] uppercase z-[1001] relative"
+          className="md:hidden pointer-events-auto text-white hover:text-primary transition-colors text-xs font-bold tracking-[0.2em] uppercase z-[1001] relative"
           aria-label="Toggle Menu"
         >
           {isOpen ? 'Close' : 'Menu'}
@@ -68,7 +68,7 @@ export const Navbar = () => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 bg-black/98 backdrop-blur-xl z-[999] flex flex-col items-center justify-center gap-8 md:hidden h-screen w-screen touch-none"
+            className="fixed inset-0 bg-black/98 backdrop-blur-xl z-[9999] flex flex-col items-center justify-center gap-8 md:hidden h-screen w-screen touch-none"
             onClick={() => setIsOpen(false)}
           >
             {['Home', 'About', 'Projects', 'Experience', 'Contact'].map((item, i) => (
