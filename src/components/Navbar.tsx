@@ -12,7 +12,7 @@ export const Navbar = () => {
       y: "-100%",
       transition: {
         duration: 0.5,
-        ease: [0.76, 0, 0.24, 1]
+        ease: [0.76, 0, 0.24, 1] as [number, number, number, number]
       }
     },
     open: {
@@ -20,13 +20,13 @@ export const Navbar = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: [0.76, 0, 0.24, 1]
+        ease: [0.76, 0, 0.24, 1] as [number, number, number, number]
       }
     }
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 md:px-12 py-4 sm:py-6 md:py-10 pointer-events-none">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 md:px-12 py-4 sm:py-6 md:py-10">
       <div className="flex justify-between items-center relative z-50">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -67,7 +67,7 @@ export const Navbar = () => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 md:hidden pointer-events-auto"
+            className="fixed inset-0 bg-black/95 backdrop-blur-xl z-[100] flex flex-col items-center justify-center gap-8 md:hidden"
           >
             {['Home', 'About', 'Projects', 'Experience', 'Contact'].map((item, i) => (
               <motion.a

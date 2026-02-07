@@ -17,6 +17,10 @@
     height: auto;
   }
 
+  html {
+    overflow-x: hidden;
+  }
+
   .lenis-smooth {
     scroll-behavior: auto !important;
   }
@@ -36,6 +40,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    width: 100%;
     contain: paint;
   }
 }
@@ -69,8 +74,11 @@
 
 .lighting-glow {
   position: absolute;
-  width: 1200px;
-  height: 1200px;
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  max-width: 800px;
+  max-height: 800px;
   background: radial-gradient(circle, rgba(118, 176, 171, 0.06) 0%, rgba(118, 176, 171, 0.02) 40%, transparent 70%);
   pointer-events: none;
   z-index: 0;
@@ -147,6 +155,6 @@ video {
   }
 
   100% {
-    transform: translateX(100vw);
+    transform: translateX(calc(100vw + 100px));
   }
 }
