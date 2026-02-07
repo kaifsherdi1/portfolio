@@ -58,8 +58,8 @@ const SkillCard = ({ group, index }: { group: ExpertiseGroup, index: number }) =
   const mouseXSpring = useSpring(x)
   const mouseYSpring = useSpring(y)
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["17.5deg", "-17.5deg"])
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-17.5deg", "17.5deg"])
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["8deg", "-8deg"])
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-8deg", "8deg"])
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -135,7 +135,7 @@ const SkillCard = ({ group, index }: { group: ExpertiseGroup, index: number }) =
       {/* 3D Depth Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-        <div style={{ transform: "translateZ(-50px)" }} className="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/10 blur-[100px] rounded-full opacity-0 group-hover:opacity-40 transition-opacity" />
+        <div style={{ transform: "translateZ(-50px)" }} className="absolute -bottom-20 -right-20 w-64 h-64 bg-primary/10 rounded-full opacity-0 group-hover:opacity-40 transition-opacity" />
       </div>
     </motion.div>
   )

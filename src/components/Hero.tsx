@@ -36,7 +36,7 @@ export const Hero = () => {
           trigger: containerRef.current,
           start: 'top top',
           end: 'bottom top',
-          scrub: 1.5
+          scrub: 2
         }
       })
     })
@@ -47,7 +47,7 @@ export const Hero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-black"
+      className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-black [contain:paint]"
     >
       {/* Full-screen Video Background */}
       <div className="video-container absolute inset-0 w-full h-full overflow-hidden">

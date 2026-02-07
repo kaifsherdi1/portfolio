@@ -54,7 +54,7 @@ export const Projects = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           pin: true,
-          scrub: 1,
+          scrub: 1.2,
           end: () => `+=${scrollWidth}`,
           anticipatePin: 1
         }
@@ -159,7 +159,7 @@ export const Projects = () => {
             className="w-[70vw] md:w-[500px] shrink-0 relative group"
             style={{ perspective: '1000px' }}
           >
-            <div className="glass overflow-hidden border border-white/[0.08] hover:border-primary/50 transition-all duration-700 h-full flex flex-col bg-black/40 backdrop-blur-xl">
+            <div className="glass overflow-hidden border border-white/[0.08] hover:border-primary/50 transition-all duration-700 h-full flex flex-col bg-black/40 will-change-transform">
               {/* Animated glow effect on hover */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent blur-2xl -z-10 scale-105" />
 

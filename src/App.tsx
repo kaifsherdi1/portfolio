@@ -17,7 +17,16 @@ function App() {
   const magneticRef = useRef<HTMLAnchorElement>(null)
 
   useEffect(() => {
-    const lenis = new Lenis()
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
+    })
 
     lenis.on('scroll', ScrollTrigger.update)
 
@@ -69,7 +78,7 @@ function App() {
       <Navbar />
       <Hero />
 
-      <section id="about" className="py-20 sm:py-40 md:py-60 px-4 sm:px-6 md:px-8 relative overflow-hidden">
+      <section id="about" className="py-20 sm:py-40 md:py-60 px-4 sm:px-6 md:px-8 relative overflow-hidden [contain:paint]">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -127,7 +136,7 @@ function App() {
       <Projects />
       <Testimonials />
 
-      <section id="contact" className="py-20 sm:py-40 md:py-60 px-4 sm:px-6 md:px-8 pb-6 sm:pb-8 md:pb-12 flex flex-col items-center justify-center min-h-screen relative overflow-hidden bg-white/[0.01]">
+      <section id="contact" className="py-20 sm:py-40 md:py-60 px-4 sm:px-6 md:px-8 pb-6 sm:pb-8 md:pb-12 flex flex-col items-center justify-center min-h-screen relative overflow-hidden bg-white/[0.01] [contain:paint]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(118,176,171,0.08)_0%,transparent_70%)]" />
 
         <div className="max-w-4xl mx-auto text-center z-10 flex flex-col items-center">
