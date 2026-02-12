@@ -35,7 +35,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 md:px-12 py-4 transition-all duration-300 ${scrolled ? 'bg-black/50 backdrop-blur-md py-4' : 'py-6 sm:py-8'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-[9999] px-4 sm:px-8 md:px-12 py-4 transition-all duration-300 ${scrolled ? 'bg-black/50 backdrop-blur-md py-4' : 'py-6 sm:py-8'}`}>
       <div className="flex justify-between items-center relative z-[1001]">
         <motion.div
           initial={{ opacity: 0, x: -20 }}

@@ -75,7 +75,7 @@ export const Projects = () => {
         })
 
         // Individual card animations (Desktop only)
-        cardRefs.current.forEach((card, index) => {
+        cardRefs.current.forEach((card, _index) => {
           if (!card) return
 
           gsap.fromTo(card,
@@ -141,7 +141,7 @@ export const Projects = () => {
   }
 
   return (
-    <section ref={sectionRef} className="min-h-screen relative bg-black py-20 md:py-0 overflow-hidden md:flex md:items-center">
+    <section ref={sectionRef} className="min-h-screen relative bg-black py-20 md:py-0 overflow-x-hidden md:overflow-hidden md:flex md:items-center">
       {/* Ambient background glow - Restored Intensity */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none" />
 
