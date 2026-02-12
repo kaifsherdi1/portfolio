@@ -59,6 +59,7 @@ export const Hero = () => {
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover object-[center_15%] [transform:translateZ(0)]"
         >
           <source src="/videos/v1.mp4" type="video/mp4" />
