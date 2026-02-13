@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **personal developer portfolio** built with **React** and **Vite**, deployed on **Vercel**.  
+This website showcases my skills, experience, and projects in a professional web format.
 
-Currently, two official plugins are available:
+🔗 **Live Site:** https://kaifsherdi-portfolio.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project is a **responsive, modern portfolio website** designed to highlight:
 
-## Expanding the ESLint configuration
+- A personal introduction
+- Technical skills
+- Projects with links and descriptions
+- Contact and social links
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+It is optimized for performance and smooth user experience.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Technology        | Purpose                        |
+|-------------------|--------------------------------|
+| **React**         | Front-end UI Library           |
+| **Vite**          | Dev server & bundler           |
+| **CSS / Tailwind**| Styling & layout (if used)     |
+| **JavaScript**    | App functionality              |
+| **Vercel**        | Hosting & deployment           |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Project Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```bash
+portfolio/
+├── public/               # Static assets
+├── src/                  # Source code
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Page or section files
+│   ├── styles/           # Styles (CSS or utility classes)
+│   └── main.jsx          # App entry point
+├── .gitignore
+├── package.json          # Dependencies & scripts
+├── vite.config.js        # Vite config
+└── README.md
+⚙️ Installation & Setup
+Clone the repository
+
+git clone https://github.com/kaifsherdi1/portfolio.git
+cd portfolio
+Install dependencies
+
+npm install
+Run in development mode
+
+npm run dev
+Build for production
+
+npm run build
+💡 Features
+✔ Responsive layout
+✔ Fast performance with Vite
+✔ Easy content customization
+✔ Deployment ready with Vercel
+
+🤝 Contributing
+This is my personal portfolio, but I welcome improvements!
+If you find something to fix or enhance:
+
+Fork the repo
+
+Create a branch (git checkout -b feature/xyz)
+
+Commit your changes
+
+Open a Pull Request
+
+📬 Contact
+Feel free to reach out 👇
+
+📧 Email: kaifsherdi19@gmail.com
+🔗 LinkedIn: https://www.linkedin.com/in/kaif-ahmed-sherdi-815b25297/
+
+📝 License
+This project is open-source — feel free to choose a license for this repository.
+
+
+---
+
+If you want, I can also add **badges**, a **screenshot header**, or a **project section with screenshots** to make the README look even more professional!
+::contentReference[oaicite:0]{index=0}
